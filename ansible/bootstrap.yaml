@@ -23,6 +23,7 @@
           - fd
           - fzf
           - ripgrep
+          - tealdeer
         state: latest
 
     # setup chezmoi
