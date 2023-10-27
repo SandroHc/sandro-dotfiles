@@ -1,0 +1,52 @@
+- name: Bootstrap machine
+  hosts: localhost
+
+  tasks:
+    # clear pacman cache automatically every week
+    - name: Install pacman-contrib
+      kewlfft.aur.aur:
+        name: pacman-contrib
+        state: latest
+    - name: Enable paccache.timer
+      ansible.builtin.systemd:
+        name: paccache.timer
+        enabled: true
+        masked: no
+
+    # setup QoL tools
+    - name: Install QoL tools
+      become: yes
+      community.general.pacman:
+        name:
+          - bat
+          - exa
+          - fd
+          - fzf
+          - ripgrep
+        state: latest
+
+    # setup chezmoi
+    - name: Install chezmoi
+      community.general.pacman:
+        name: chezmoi
+        state: latest
+    - name: Init chezmoi
+      ansible.builtin.command:
+        cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
+        creates: "~/.local/share/chezmoi"
+
+    # setup develop
+    - name: Install develop packages
+      become: yes
+      community.general.pacman:
+        name:
+          - base-devel
+          - git
+          - jdk-openjdk
+          - python
+          - nodejs
+        state: latest
+    - name: Install jetbrains-toolbox
+      kewlfft.aur.aur:
+        name: jetbrains-toolbox
+        state: latest

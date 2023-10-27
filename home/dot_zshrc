@@ -1,0 +1,28 @@
+# Use powerline
+USE_POWERLINE="true"
+
+# Source manjaro-zsh-configuration
+if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
+  source /usr/share/zsh/manjaro-zsh-config
+fi
+# Use manjaro zsh prompt
+if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
+  source /usr/share/zsh/manjaro-zsh-prompt
+fi
+
+export EDITOR="vim"
+export VISUAL="vim"
+
+# exa: ls replacement
+alias exa="exa --color auto"
+alias ls="exa"
+alias l="ls --long -a"
+
+# bat: cat replacement
+alias cat="bat"
+
+# fd: find replacement
+alias fd="fd -HI"
+
+alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
+
