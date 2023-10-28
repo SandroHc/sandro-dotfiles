@@ -18,22 +18,58 @@ source "${XDG_DATA_HOME}/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "${XDG_DATA_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 
-## Use powerline
-#USE_POWERLINE="true"
+# MISC
+#
+
+# Change default editor
+export EDITOR="vim"
+export VISUAL="vim"
+
+# Prime cache directories
+mkdir -p "${XDG_CACHE_HOME}/zsh"
+mkdir -p "${XDG_STATE_HOME}/zsh"
+
+# Move history to cache directory
+SAVEHIST=1000
+HISTSIZE=1000
+HISTFILE="${XDG_STATE_HOME}/zsh/history"
+
 ## Source manjaro-zsh-configuration
 #if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
 #  source /usr/share/zsh/manjaro-zsh-config
 #fi
-## Use manjaro zsh prompt
-#if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
-#  source /usr/share/zsh/manjaro-zsh-prompt
-#fi
 
-export EDITOR="vim"
-export VISUAL="vim"
+
+# ALIAS
+#
+alias vim="nvim"
+alias cat="bat"
+alias difft="difft --display=inline"
+alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
+alias eza="eza --color auto"
+alias ls="eza"
+alias l="ls --long -a"
+
+eval "$(zoxide init zsh)"
+
+
+# COMPLETIONS
+#
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' menu select                              # Highlight menu selection
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/completions"
+
+autoload -U compinit
+compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
 
 
 # KEYBINDINGS
+#
 bindkey -e
 bindkey '^[[7~' beginning-of-line                               # Home key
 bindkey '^[[H' beginning-of-line                                # Home key
@@ -41,7 +77,7 @@ if [[ "${terminfo[khome]}" != "" ]]; then
   bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
 fi
 bindkey '^[[8~' end-of-line                                     # End key
-bindkey '^[[F' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                      # End key
 if [[ "${terminfo[kend]}" != "" ]]; then
   bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
 fi
@@ -61,45 +97,9 @@ bindkey '^H' backward-kill-word                                 # delete previou
 bindkey '^[[Z' undo                                             # Shift+tab undo last action
 
 
-# ALIAS
-#
-
-alias vim="nvim"
-
-# `eza`: ls replacement
-alias eza="eza --color auto"
-alias ls="eza"
-alias l="ls --long -a"
-
-# `bat`: cat replacement
-alias cat="bat"
-
-# `difftastic`: diff replacement
-alias difft="difft --display=inline"
-
-alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
-
-# `zoxide`
-eval "$(zoxide init zsh)"
-
-
-# COMPLETIONS
-#
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                              # automatically find new executables in path 
-zstyle ':completion:*' menu select                              # Highlight menu selection
-# Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh"
-
-autoload -U compinit
-compinit
-
-
-# Powerline10K config - customize with `p10k configure`
-if [[ -r "${HOME}/.p10k.zsh" ]]; then
-  source "${HOME}/.p10k.zsh"
+# Load Powerline10K config
+# Customize with `p10k configure` and move generated `$HOME/.p10k.zsh` to the appropriate directory
+if [[ -r "${XDG_CONFIG_HOME}/zsh/themes/p10k.zsh" ]]; then
+  source "${XDG_CONFIG_HOME}/zsh/themes/p10k.zsh"
 fi
 
