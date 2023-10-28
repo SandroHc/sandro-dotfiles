@@ -2,6 +2,9 @@
   hosts: localhost
 
   tasks:
+    # BASE
+    #
+
     # clear pacman cache automatically every week
     - name: Install pacman-contrib
       kewlfft.aur.aur:
@@ -13,40 +16,11 @@
         enabled: true
         masked: no
 
-    # setup QoL tools
-    - name: Install QoL tools
-      become: yes
-      community.general.pacman:
-        name:
-          # `cat` replacement
-          - bat
-          # `diff` replacement
-          - difftastic
-          # `ls` replacement
-          - eza
-          # `find` replacement
-          - fd
-          # fuzzy file search
-          - fzf
-          # `grep` replacement
-          - ripgrep
-          # tldr of man pages
-          - tealdeer
-          # HTTP load generator
-          - oha
-          # hex viewer
-          - hexyl
-          # `cd` replacement
-          - zoxide
-        state: latest
-    - name: Install QoL tools (AUR)
+    # TODO: configure Meslo NF as default in kitty - https://github.com/romkatv/powerlevel10k#manual-font-installation
+    - name: "Install font: Meslo (Nerd Font variant)"
       kewlfft.aur.aur:
-        name:
-          # JSON query
-          - jql
+        name: ttf-meslo-nerd
         state: latest
-
-    # TODO: setup `zoxide`: zoxide init zsh
 
     # setup chezmoi
     - name: Install chezmoi
@@ -58,13 +32,58 @@
         cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
         creates: "~/.local/share/chezmoi"
 
-    # setup develop
-    - name: Install develop packages
+
+    # QOL
+    #
+
+    # setup QoL tools
+    - name: Install QoL tools
+      become: yes
+      community.general.pacman:
+        name:
+          - bat        # `cat` alternative
+          - difftastic # `diff` alternative
+          - eza        # `ls` alternative
+          - fd         # `find` alternative
+          - fzf        # fuzzy file search
+          - hexyl      # hex viewer
+          - neovim
+          - oha        # HTTP load generator
+          - ripgrep    # `grep` alternative
+          - tealdeer   # tldr of man pages
+          - zoxide     # `cd` alternative
+        state: latest
+    - name: Install QoL tools (AUR)
+      kewlfft.aur.aur:
+        name:
+          - jql        # JSON query
+        state: latest
+
+
+    # CLI
+    #
+    - name: Install Zsh
+      community.general.pacman:
+        name: zsh
+        state: latest
+    - name: Set Zsh as default
+      ansible.builtin.command:
+        cmd: chsh -s $(which zsh)
+    # TODO: setup `zoxide` with Zsh: zoxide init zsh
+
+
+    # DE
+    #
+    # TODO: install kitty
+
+
+    # DEVEL
+    #
+    - name: Install packages for development
       become: yes
       community.general.pacman:
         name:
           - base-devel
-          - git
           - jdk-openjdk
           - python
           - nodejs
