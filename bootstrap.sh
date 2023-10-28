@@ -14,4 +14,4 @@ ansible-galaxy collection install -r "$script_dir/ansible/modules.yaml"
 
 echo ""
 echo "ℹ️  Bootstrapping machine..."
-ansible-playbook --ask-become-pass --verbose "$script_dir/ansible/bootstrap.yaml"
+ANSIBLE_STDOUT_CALLBACK=yaml ansible-playbook --ask-become-pass --verbose "$script_dir/ansible/bootstrap.yaml"

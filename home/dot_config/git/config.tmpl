@@ -8,3 +8,14 @@
 	rebase = true
 [url "git@github.com:SandroHc/"]
 	insteadOf = https://github.com/SandroHc/
+
+# use `difftastic` as the default diff tool
+[diff]
+	external = difft --display=inline
+        tool = difftastic
+[difftool]
+        prompt = false
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE" --display=inline
+[pager]
+        difftool = true

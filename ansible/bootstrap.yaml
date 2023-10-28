@@ -18,13 +18,35 @@
       become: yes
       community.general.pacman:
         name:
+          # `cat` replacement
           - bat
-          - exa
+          # `diff` replacement
+          - difftastic
+          # `ls` replacement
+          - eza
+          # `find` replacement
           - fd
+          # fuzzy file search
           - fzf
+          # `grep` replacement
           - ripgrep
+          # tldr of man pages
           - tealdeer
+          # HTTP load generator
+          - oha
+          # hex viewer
+          - hexyl
+          # `cd` replacement
+          - zoxide
         state: latest
+    - name: Install QoL tools (AUR)
+      kewlfft.aur.aur:
+        name:
+          # JSON query
+          - jql
+        state: latest
+
+    # TODO: setup `zoxide`: zoxide init zsh
 
     # setup chezmoi
     - name: Install chezmoi

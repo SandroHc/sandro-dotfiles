@@ -13,16 +13,18 @@ fi
 export EDITOR="vim"
 export VISUAL="vim"
 
-# exa: ls replacement
-alias exa="exa --color auto"
-alias ls="exa"
+# `eza`: ls replacement
+alias eza="eza --color auto"
+alias ls="eza"
 alias l="ls --long -a"
 
-# bat: cat replacement
+# `bat`: cat replacement
 alias cat="bat"
 
-# fd: find replacement
-alias fd="fd -HI"
+# `difftastic`: diff replacement
+alias diff="difft --display=inline"
 
 alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 
+# `zoxide`
+eval "$(zoxide init zsh)"
