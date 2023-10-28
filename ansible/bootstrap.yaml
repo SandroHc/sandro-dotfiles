@@ -32,6 +32,10 @@
         cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
         creates: "~/.local/share/chezmoi"
 
+    # TODO: install paru
+    # TODO: setup SSH and GPG keys
+    # TODO: increase GPG agent timeouts
+
 
     # QOL
     #
@@ -59,7 +63,6 @@
           - jql        # JSON query
         state: latest
 
-
     # CLI
     #
     - name: Install Zsh
@@ -71,12 +74,37 @@
       ansible.builtin.user:
         name: "{{ansible_user_id}}"
         shell: "/usr/bin/zsh"
-    # TODO: setup `zoxide` with Zsh: zoxide init zsh
 
 
     # DE
     #
-    # TODO: install kitty
+    - name: Install Wayland apps
+      community.general.pacman:
+        name:
+          - hyprland
+          - kitty        # terminal
+          - dinst        # notification daemon
+          - xdg-desktop-portal-hyprland
+          - xdg-desktop-portal-gtk
+          - polkit-gnome # auth agent
+          - qt5-wayland
+          - qt6-wayland
+        state: latest
+    - name: Install Wayland apps (AUR)
+      kewlfft.aur.aur:
+        name:
+          - eww-wayland  # status bar, widgets
+          - rofi-lbonn-wayland-git # app launcher
+          - swww         # wallpaper
+        state: latest
+    - name: Install screensharing apps
+      community.general.pacman:
+        name:
+          - pipewire
+          - wireplumber
+          - grim
+          - slurp
+        state: latest
 
 
     # DEVEL
