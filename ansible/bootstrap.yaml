@@ -83,7 +83,7 @@
         name:
           - hyprland
           - kitty        # terminal
-          - dinst        # notification daemon
+          - dunst        # notification daemon
           - xdg-desktop-portal-hyprland
           - xdg-desktop-portal-gtk
           - polkit-gnome # auth agent
