@@ -14,6 +14,7 @@ source "${XDG_DATA_HOME}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
 # PLUGINS
 #
 source "${XDG_DATA_HOME}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${XDG_DATA_HOME}/zsh/plugins/zsh-completions/zsh-completions.plugin.zsh"
 source "${XDG_DATA_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 
@@ -81,6 +82,24 @@ alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 # `zoxide`
 eval "$(zoxide init zsh)"
 
+
+# COMPLETIONS
+#
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path 
+zstyle ':completion:*' menu select                              # Highlight menu selection
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh"
+
+autoload -U compinit
+compinit
+
+
 # Powerline10K config - customize with `p10k configure`
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ -r "${HOME}/.p10k.zsh" ]]; then
+  source "${HOME}/.p10k.zsh"
+fi
 
