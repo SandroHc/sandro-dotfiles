@@ -5,19 +5,20 @@ if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# PLUGINS
-#
-source "${XDG_CONFIG_HOME}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "${XDG_CONFIG_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # THEMES
 #
-# Powerlevel10K (https://github.com/romkatv/powerlevel10k) - configure with `p10k configure`
-source "${XDG_CONFIG_HOME}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
+source "${XDG_DATA_HOME}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
+
+
+# PLUGINS
+#
+source "${XDG_DATA_HOME}/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${XDG_DATA_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
 
 ## Use powerline
 #USE_POWERLINE="true"
-
 ## Source manjaro-zsh-configuration
 #if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
 #  source /usr/share/zsh/manjaro-zsh-config
@@ -27,9 +28,42 @@ source "${XDG_CONFIG_HOME}/zsh/themes/powerlevel10k/powerlevel10k.zsh-theme"
 #  source /usr/share/zsh/manjaro-zsh-prompt
 #fi
 
-alias vim="nvim"
 export EDITOR="vim"
 export VISUAL="vim"
+
+
+# KEYBINDINGS
+bindkey -e
+bindkey '^[[7~' beginning-of-line                               # Home key
+bindkey '^[[H' beginning-of-line                                # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                     # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C'  forward-char                                    # Right key
+bindkey '^[[D'  backward-char                                   # Left key
+bindkey '^[[5~' history-beginning-search-backward               # Page up key
+bindkey '^[[6~' history-beginning-search-forward                # Page down key
+
+# Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                             # Shift+tab undo last action
+
+
+# ALIAS
+#
+
+alias vim="nvim"
 
 # `eza`: ls replacement
 alias eza="eza --color auto"
@@ -40,9 +74,13 @@ alias l="ls --long -a"
 alias cat="bat"
 
 # `difftastic`: diff replacement
-alias diff="difft --display=inline"
+alias difft="difft --display=inline"
 
 alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 
 # `zoxide`
 eval "$(zoxide init zsh)"
+
+# Powerline10K config - customize with `p10k configure`
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

@@ -67,8 +67,10 @@
         name: zsh
         state: latest
     - name: Set Zsh as default
-      ansible.builtin.command:
-        cmd: chsh -s $(which zsh)
+      become: yes
+      ansible.builtin.user:
+        name: "{{ansible_user_id}}"
+        shell: "/usr/bin/zsh"
     # TODO: setup `zoxide` with Zsh: zoxide init zsh
 
 
