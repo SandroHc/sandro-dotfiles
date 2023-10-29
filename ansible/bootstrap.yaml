@@ -29,7 +29,7 @@
         state: latest
     - name: Init chezmoi
       ansible.builtin.command:
-        cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
+        cmd: chezmoi init --apply git@github.com:SandroHc/sandro-dotfiles.git
         creates: "~/.local/share/chezmoi"
 
     # TODO: install paru
