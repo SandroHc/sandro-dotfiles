@@ -1,6 +1,13 @@
 # sandro-dotfiles
 Personal .dotfiles repository
 
+## Shortcuts
+
+TODO: manage shortcuts in this repo
+META + Q - terminal
+META + arrow up - maximize window
+CTRL + Q - close window
+
 ## Base
 
 ### WIP: Metapackage ideas

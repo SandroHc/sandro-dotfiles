@@ -44,11 +44,12 @@ HISTFILE="${XDG_STATE_HOME}/zsh/history"
 #
 alias vim="nvim"
 alias cat="bat"
+alias cm="chezmoi"
 alias difft="difft --display=inline"
-alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 alias eza="eza --color auto"
 alias ls="eza"
 alias l="ls --long -a"
+alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 
 eval "$(zoxide init zsh)"
 

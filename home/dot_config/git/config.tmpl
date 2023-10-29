@@ -9,13 +9,13 @@
 [url "git@github.com:SandroHc/"]
 	insteadOf = https://github.com/SandroHc/
 
-# use `difftastic` as the default diff tool
+# use `difftastic` as the diff tool
 [diff]
 	external = difft --display=inline
-        tool = difftastic
+    tool = difftastic
 [difftool]
-        prompt = false
+    prompt = false
 [difftool "difftastic"]
-        cmd = difft "$LOCAL" "$REMOTE" --display=inline
+    cmd = difft "$LOCAL" "$REMOTE" --display=inline
 [pager]
-        difftool = true
+    difftool = true
