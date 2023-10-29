@@ -1,7 +1,0 @@
-# use `difftastic` as the diff tool
-[diff]
-    command = "difft"
-    args = ["{{ .Destination }}", "{{ .Target }}", "--display=inline"]
-[merge]
-    command = "nvim"
-    args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]

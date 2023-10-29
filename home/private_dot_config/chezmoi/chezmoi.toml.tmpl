@@ -1,0 +1,13 @@
+{{- $name := "Sandro Marques" -}}
+{{- $email := "sandro123iv@gmail.com" -}}
+
+[diff]
+    # use `difftastic` as the diff tool
+    command = "difft"
+    args = ["{{ .Destination }}", "{{ .Target }}", "--display=inline"]
+[merge]
+    command = "nvim"
+    args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+[data]
+    name = "{{ .name  }}"
+    email = "{{ .email }}"
