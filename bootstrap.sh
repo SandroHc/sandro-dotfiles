@@ -5,6 +5,8 @@ set -e # -e: exit on error
 # POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
+echo "⚠️  Don't forget to set your hostname with: hostnamectl set-hostname $YOUR_HOSTNAME"
+
 # generate SSH key
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux
 echo "ℹ️  Generating SSH key..."
@@ -12,7 +14,7 @@ if [ -f "${HOME}/.ssh/id_ed25519" ]; then
   echo "✅  SSH key already exists; skipping"
 else
   # generate key
-  ssh-keygen -t ed25519 -C "sandrohc@$(hostname)"
+  ssh-keygen -t ed25519 -C "sandrohc-$(hostname)"
   # start the SSH agent
   eval "$(ssh-agent -s)"
   # add key to the agent

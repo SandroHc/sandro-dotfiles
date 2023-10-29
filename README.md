@@ -46,6 +46,8 @@ chezmoi diff
 chezmoi apply --dry-run --verbose
 chezmoi edit $FILE
 chezmoi merge $FILE
+chezmoi managed
+chezmoi unmanaged
 ```
 
 ### [Hyprland](https://hyprland.org/)
