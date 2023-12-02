@@ -1,0 +1,30 @@
+- name: Setup base
+  hosts: localhost
+  tasks:
+    # clear pacman cache automatically every week
+    - name: Install pacman-contrib
+      kewlfft.aur.aur:
+        name: pacman-contrib
+        state: latest
+    - name: Enable paccache.timer
+      ansible.builtin.systemd:
+        name: paccache.timer
+        enabled: true
+        masked: no
+
+    - name: "Install font: Meslo (Nerd Font variant)"
+      kewlfft.aur.aur:
+        name: ttf-meslo-nerd
+        state: latest
+
+    # setup chezmoi
+    - name: Install chezmoi
+      community.general.pacman:
+        name: chezmoi
+        state: latest
+    - name: Init chezmoi
+      ansible.builtin.command:
+        cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
+        creates: "~/.local/share/chezmoi"
+
+    # TODO: install paru

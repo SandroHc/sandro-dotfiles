@@ -1,0 +1,12 @@
+- name: Setup CLI
+  hosts: localhost
+  tasks:
+    - name: Install Zsh
+      community.general.pacman:
+        name: zsh
+        state: latest
+    - name: Set Zsh as default
+      become: yes
+      ansible.builtin.user:
+        name: "{{ansible_user_id}}"
+        shell: "/usr/bin/zsh"

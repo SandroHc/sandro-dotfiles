@@ -1,0 +1,32 @@
+- name: Setup desktop environment
+  hosts: localhost
+  tasks:
+    - name: Install Wayland apps
+      community.general.pacman:
+        name:
+          - hyprland
+          - kitty        # terminal
+          - dunst        # notification daemon
+          - xdg-desktop-portal-hyprland
+          - xdg-desktop-portal-gtk
+          - polkit-gnome # auth agent
+          - qt5-wayland
+          - qt6-wayland
+        state: latest
+    - name: Install Wayland apps (AUR)
+      kewlfft.aur.aur:
+        name:
+          - eww-wayland  # status bar, widgets
+          - rofi-lbonn-wayland-git # app launcher
+          - swww         # wallpaper
+        state: latest
+    - name: Install screensharing apps
+      community.general.pacman:
+        name:
+          - pipewire
+          - wireplumber
+          - grim
+          - slurp
+        state: latest
+
+    # TODO: configure Meslo NF as default in kitty - https://github.com/romkatv/powerlevel10k#manual-font-installation

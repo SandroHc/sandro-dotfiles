@@ -1,6 +1,12 @@
 # sandro-dotfiles
 Personal .dotfiles repository
 
+## Quick setup
+
+```shell
+curl -sSf https://raw.githubusercontent.com/SandroHc/sandro-dotfiles/master/bootstrap.sh | sh
+```
+
 ## Shortcuts
 
 TODO: manage shortcuts in this repo
@@ -25,7 +31,7 @@ copy priv and pubkey from safe location
 add privkey to authorized_keys
 
 ### Setup Pacman
-```sh
+```shell
 sudo vim /etc/pacman.conf
 # uncomment `Color` and `ParallelDownloads = 5`
 ```
@@ -35,7 +41,7 @@ sudo vim /etc/pacman.conf
 ### [chezmoi](https://chezmoi.io/)
 chezmoi is a dotfiles manager.
 
-```sh
+```shell
 sudo pacman -S chezmoi
 chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
 

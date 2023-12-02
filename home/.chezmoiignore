@@ -1,0 +1,4 @@
+# Ignore all Hyprland configs for now
+.config/dunst/*
+.config/eww/*
+.config/hypr/*

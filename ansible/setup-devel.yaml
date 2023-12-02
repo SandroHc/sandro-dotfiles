@@ -1,0 +1,16 @@
+- name: Setup development tools
+  hosts: localhost
+  tasks:
+    - name: Install packages for development
+      become: yes
+      community.general.pacman:
+        name:
+          - base-devel
+          - jdk-openjdk
+          - python
+          - nodejs
+        state: latest
+    - name: Install jetbrains-toolbox
+      kewlfft.aur.aur:
+        name: jetbrains-toolbox
+        state: latest

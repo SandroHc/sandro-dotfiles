@@ -1,0 +1,7 @@
+- name: Bootstrap machine
+  hosts: localhost
+- import_playbook: setup-base.yaml
+- import_playbook: setup-qol.yaml
+- import_playbook: setup-cli.yaml
+#- import_playbook: setup-de.yaml
+- import_playbook: setup-devel.yaml

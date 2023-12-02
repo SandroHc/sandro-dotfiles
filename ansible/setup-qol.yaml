@@ -1,0 +1,24 @@
+- name: Setup QoL
+  hosts: localhost
+  tasks:
+    - name: Install QoL tools
+      become: yes
+      community.general.pacman:
+        name:
+          - bat        # `cat` alternative
+          - difftastic # `diff` alternative
+          - eza        # `ls` alternative
+          - fd         # `find` alternative
+          - fzf        # fuzzy file search
+          - hexyl      # hex viewer
+          - neovim
+          - oha        # HTTP load generator
+          - ripgrep    # `grep` alternative
+          - tealdeer   # tldr of man pages
+          - zoxide     # `cd` alternative
+        state: latest
+    - name: Install QoL tools (AUR)
+      kewlfft.aur.aur:
+        name:
+          - jql        # JSON query
+        state: latest
