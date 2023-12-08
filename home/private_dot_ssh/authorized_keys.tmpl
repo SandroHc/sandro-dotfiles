@@ -1,3 +1,6 @@
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWyP5Bw4tFHYkBYNxyRrzU2hmIaqTHC0DTqYKGksUI2 sandrohc-kurisu
+
+# GitHub keys - https://api.github.com/users/SandroHc/keys
 {{ range (gitHubKeys "SandroHc") -}}
-{{   .Key }}
+{{   .Key }} sandrohc-github-{{.ID}}
 {{ end -}}

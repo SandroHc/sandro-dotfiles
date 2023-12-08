@@ -2,10 +2,11 @@
   hosts: localhost
   tasks:
     - name: Install Zsh
-      community.general.pacman:
+      become: yes
+      ansible.builtin.dnf:
         name: zsh
         state: latest
-    - name: Set Zsh as default
+    - name: Set Zsh as default shell
       become: yes
       ansible.builtin.user:
         name: "{{ansible_user_id}}"

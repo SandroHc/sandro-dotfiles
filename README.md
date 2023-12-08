@@ -4,7 +4,7 @@ Personal .dotfiles repository
 ## Quick setup
 
 ```shell
-curl -sSf https://raw.githubusercontent.com/SandroHc/sandro-dotfiles/master/bootstrap.sh | sh
+curl -fsSL https://raw.githubusercontent.com/SandroHc/sandro-dotfiles/master/bootstrap.sh | sh
 ```
 
 ## Shortcuts

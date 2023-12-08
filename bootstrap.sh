@@ -5,10 +5,12 @@
 
 set -e
 
-echo "⚠️  Don't forget to set your hostname with: hostnamectl set-hostname $YOUR_HOSTNAME"
+echo "ℹ️  Hostname: $(hostname)"
+echo "⚠️  Change with: hostnamectl set-hostname \$YOUR_HOSTNAME"
 
 # generate SSH key
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=linux
+echo ""
 echo "ℹ️  Generating SSH key..."
 if [ -f "${HOME}/.ssh/id_ed25519" ]; then
   echo "✅  SSH key already exists; skipping"
@@ -26,22 +28,17 @@ fi
 # download, setup and run Ansible playbook
 echo ""
 echo "ℹ️  Installing Ansible..."
-sudo pacman --sync --needed --noconfirm ansible
+sudo dnf install -y ansible
 
 echo ""
 echo "ℹ️  Installing Ansible modules..."
 ansible-galaxy collection install "community.general"
-ansible-galaxy collection install "kewlfft.aur"
 
 ansible_files_url="https://github.com/SandroHc/sandro-dotfiles/archive/refs/heads/master.tar.gz"
-tmp_dir="/tmp/sandro-dotfiles"
+tmp_dir="$(mktemp -d sandro-dotfiles.XXXXX)"
 echo ""
 echo "ℹ️  Downloading Ansible files from '${ansible_files_url}'..."
-if [ -f "${tmp_dir}" ]; then
-  rm -rf "${tmp_dir}"
-fi
-mkdir -p "${tmp_dir}"
-curl -Lf --location "${ansible_files_url}" | tar xvz -C "${tmp_dir}" --strip-components 1 --wildcards "*/ansible/*"
+curl -fsSL "${ansible_files_url}" | tar xvz -C "${tmp_dir}" --strip-components 1 --wildcards "*/ansible/*"
 
 echo ""
 echo "ℹ️  Bootstrapping machine..."

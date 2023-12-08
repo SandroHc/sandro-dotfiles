@@ -3,14 +3,14 @@
   tasks:
     - name: Install packages for development
       become: yes
-      community.general.pacman:
+      ansible.builtin.dnf:
         name:
-          - base-devel
-          - jdk-openjdk
+          - java-latest-openjdk-devel
           - python
           - nodejs
         state: latest
     - name: Install jetbrains-toolbox
-      kewlfft.aur.aur:
-        name: jetbrains-toolbox
-        state: latest
+      become: yes
+      ansible.builtin.command:
+        cmd: curl -fsLS "https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.1.1.18388.tar.gz" | tar xvz -C "/opt" --strip-components 1
+        creates: "/opt/jetbrains-toolbox"
