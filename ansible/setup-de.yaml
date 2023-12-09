@@ -1,37 +1,24 @@
-- name: Setup desktop environment
+- name: Setup desktop environment and user apps
   hosts: localhost
   tasks:
 #    - name: Install Flameshot (screenshot tool)
-#      community.general.pacman:
+#      community.general.dnf:
 #        name: flameshot
 #        state: latest
 
-#    - name: Install Wayland apps
-#      community.general.pacman:
-#        name:
-#          - hyprland
-#          - kitty        # terminal
-#          - dunst        # notification daemon
-#          - xdg-desktop-portal-hyprland
-#          - xdg-desktop-portal-gtk
-#          - polkit-gnome # auth agent
-#          - qt5-wayland
-#          - qt6-wayland
-#        state: latest
-#    - name: Install Wayland apps (AUR)
-#      kewlfft.aur.aur:
-#        name:
-#          - eww-wayland  # status bar, widgets
-#          - rofi-lbonn-wayland-git # app launcher
-#          - swww         # wallpaper
-#        state: latest
-#    - name: Install screensharing apps
-#      community.general.pacman:
-#        name:
-#          - pipewire
-#          - wireplumber
-#          - grim
-#          - slurp
-#        state: latest
+#    # Gnome Shell Extension: Clipboard History (https://extensions.gnome.org/extension/4839/clipboard-history/)
+#    - name: "Gnome Shell Extension: Clipboard History"
+#      become: yes
+#      ansible.builtin.command:
+#        cmd: gnome-extensions enable clipboard-history@alexsaveau.dev
+#    # Gnome Shell Extension: No overview at start-up (https://extensions.gnome.org/extension/4099/no-overview/)
+#    - name: "Gnome Shell Extension: No overview at start-up"
+#      become: yes
+#      ansible.builtin.command:
+#        cmd: gnome-extensions enable no-overview@fthx
 
-    # TODO: configure Meslo NF as default in kitty - https://github.com/romkatv/powerlevel10k#manual-font-installation
+# TODO: install OBS
+# TODO: install Inkscape
+# TODO: install image viewer
+# TODO: install image editor
+# TODO: install video player (mpv?)

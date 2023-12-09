@@ -1,0 +1,13 @@
+- name: Setup gaming tools
+  hosts: localhost
+  tasks:
+    - name: Install Steam & lutris
+      become: yes
+      ansible.builtin.dnf:
+        name:
+          - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+          - steam
+          - lutris
+        state: latest
+
+# TODO: auto configure Steam to use Proton for all titles

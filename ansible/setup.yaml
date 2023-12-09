@@ -5,3 +5,4 @@
 - import_playbook: setup-cli.yaml
 - import_playbook: setup-de.yaml
 - import_playbook: setup-devel.yaml
+- import_playbook: setup-gaming.yaml

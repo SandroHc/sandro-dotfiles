@@ -43,3 +43,5 @@ curl -fsSL "${ansible_files_url}" | tar xvz -C "${tmp_dir}" --strip-components 1
 echo ""
 echo "ℹ️  Bootstrapping machine..."
 ANSIBLE_STDOUT_CALLBACK=yaml ansible-playbook --ask-become-pass --verbose "${tmp_dir}/ansible/setup.yaml"
+
+rm -rf "${tmp_dir}"

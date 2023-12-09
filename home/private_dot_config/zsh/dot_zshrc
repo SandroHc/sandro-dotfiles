@@ -22,8 +22,8 @@ source "${XDG_DATA_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highli
 #
 
 # Change default editor
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # Prime cache directories
 mkdir -p "${XDG_CACHE_HOME}/zsh"
@@ -34,14 +34,10 @@ SAVEHIST=1000
 HISTSIZE=1000
 HISTFILE="${XDG_STATE_HOME}/zsh/history"
 
-## Source manjaro-zsh-configuration
-#if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
-#  source /usr/share/zsh/manjaro-zsh-config
-#fi
-
 
 # ALIAS
 #
+alias vi="nvim"
 alias vim="nvim"
 alias cat="bat"
 alias cm="chezmoi"

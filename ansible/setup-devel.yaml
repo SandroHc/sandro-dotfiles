@@ -6,9 +6,13 @@
       ansible.builtin.dnf:
         name:
           - java-latest-openjdk-devel
-          - python
           - nodejs
+          - python
         state: latest
+    - name: Install rustup
+      become: yes
+      ansible.builtin.command:
+        cmd: curl -sSf https://sh.rustup.rs | sh -s -- -y
     - name: Install jetbrains-toolbox
       become: yes
       ansible.builtin.command:
