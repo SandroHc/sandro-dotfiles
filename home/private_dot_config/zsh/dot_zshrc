@@ -25,7 +25,7 @@ source "${XDG_DATA_HOME}/zsh/plugins/fast-syntax-highlighting/fast-syntax-highli
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# Prime cache directories
+# Create cache directories
 mkdir -p "${XDG_CACHE_HOME}/zsh"
 mkdir -p "${XDG_STATE_HOME}/zsh"
 
@@ -47,7 +47,7 @@ alias ls="eza"
 alias l="ls --long -a"
 alias ducks="sudo du -acm 2>/dev/null | sort -nr | head -n 20"
 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 
 # COMPLETIONS

@@ -1,15 +1,19 @@
-[user]
-	name = {{ .name }}
-	email = {{ .email }}
-	signingkey = ~/.ssh/id_ed25519.pub
+[alias]
+	amend-date = commit --amend --no-edit --date=now
 [commit]
 	gpgsign = true
 [gpg]
 	format = ssh
-[pull]
-	rebase = true
+[merge]
+	ff = only
 [url "git@github.com:SandroHc/"]
 	insteadOf = https://github.com/SandroHc/
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+	signingkey = ~/.ssh/id_ed25519.pub
+[pull]
+	rebase = true
 
 # use `difftastic` as the diff tool
 [diff]
