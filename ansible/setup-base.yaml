@@ -10,7 +10,7 @@
     - name: Install chezmoi
       become: yes
       ansible.builtin.dnf:
-        name: "https://github.com/twpayne/chezmoi/releases/download/v2.42.2/chezmoi-2.42.2-x86_64.rpm"
+        name: "https://github.com/twpayne/chezmoi/releases/download/v2.47.0/chezmoi-2.47.0-x86_64.rpm"
         state: present
     - name: Init chezmoi
       ansible.builtin.command:
