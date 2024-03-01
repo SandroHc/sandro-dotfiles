@@ -1,6 +1,26 @@
 - name: Setup base
   hosts: localhost
   tasks:
+    - name: Get Fedora Version
+      ansible.builtin.command: "rpm -E %fedora"
+      register: fedora_version
+    - set_fact: 
+        fedora_version={{ fedora_version.stdout }}
+    - name: Enable RPM Fusion repository (free)
+      become: yes
+      ansible.builtin.dnf:
+        name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{fedora_version}}.noarch.rpm"
+        state: present	
+    - name: Enable RPM Fusion repository (non-free)
+      become: yes
+      ansible.builtin.dnf:
+        name: "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{fedora_version}}.noarch.rpm"
+        state: present
+    - name: Install media codecs
+      become: yes
+      ansible.builtin.dnf:
+        name: "@Multimedia"
+        state: present
 #    - name: "Install font: Meslo (Nerd Font variant)"
 #      kewlfft.aur.aur:
 #        name: ttf-meslo-nerd
@@ -8,7 +28,7 @@
 
     # setup chezmoi
     - name: Install chezmoi
-      become: yes
+      become: yes))	
       ansible.builtin.dnf:
         name: "https://github.com/twpayne/chezmoi/releases/download/v2.47.0/chezmoi-2.47.0-x86_64.rpm"
         state: present
@@ -17,3 +37,5 @@
       ansible.builtin.command:
         cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
         creates: "$HOME/.local/share/chezmoi"
+  
+
