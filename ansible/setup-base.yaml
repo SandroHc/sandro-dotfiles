@@ -12,6 +12,7 @@
       ansible.builtin.dnf:
         name: "https://github.com/twpayne/chezmoi/releases/download/v2.47.0/chezmoi-2.47.0-x86_64.rpm"
         state: present
+        disable_gpg_check: true
     - name: Init chezmoi
       ansible.builtin.command:
         cmd: chezmoi init --apply https://github.com/SandroHc/sandro-dotfiles.git
