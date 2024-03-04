@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     ripgrep     # `grep` alternative
     yt-dlp
-#    tealdeer    # tldr for man pages
     imagemagick
     ffmpeg-full
     nmap
@@ -12,11 +11,10 @@
     unzip
 
 #    difftastic # `diff` alternative
-#    fzf        # fuzzy file search
+    fzf        # fuzzy file search
 #    hexyl      # hex viewer
-#    jql        # JSON query
+    jql        # JSON query
 #    oha        # HTTP load generator
-#    zoxide     # `cd` alternative
   ];
 
   services = {
@@ -31,10 +29,15 @@
   programs = {
     gpg.enable = true;
     man.enable = true;
-    eza.enable = true;
+    eza.enable = true; # `ls` alternative 
     dircolors = {
       enable = true;
       enableZshIntegration = true;
+    };
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
     };
     tealdeer = {
       enable = true;
@@ -46,11 +49,12 @@
 	updates.auto_update = true;
       };
     };
-    bat = {
+    bat = { # `cat` alternative
       enable = true;
       config = {
         pager = "less -FR";
       };
     };
+    zoxide.enable = true;
   };
 }

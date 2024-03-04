@@ -1,7 +1,6 @@
 { config, pkgs, cfg, lib, inputs, ... }: {
   environment = {
     systemPackages = with pkgs; [
-      neovim
       git
       deadnix
       alejandra

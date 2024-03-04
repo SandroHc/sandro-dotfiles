@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
   programs.git = {
     enable = true;
     userName = "Sandro Marques";
@@ -12,9 +12,12 @@
       ".idea/"
     ];
     extraConfig = {
+        gpg.format = "ssh";
     };
     aliases = {
       amend-date = "commit --amend --no-edit --date=now";
     };
+
+    lfs.enable = lib.mkDefault true;
   };
 }
