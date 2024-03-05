@@ -12,8 +12,8 @@
         description = "SandroHc";
         isNormalUser = true;
         uid = 1000;
-        initialPassword = "changeme";
-        # passwordFile = "/home/sandro/.local/share/passwd";
+        # initialPassword = "changeme";
+        hashedPasswordFile = "/home/sandro/.local/share/passwd";
         shell = pkgs.zsh;
         # openssh.authorizedKeys.keys = import ./openssh-auth-keys.nix;
         openssh.authorizedKeys.keys = [
