@@ -6,6 +6,10 @@
     ./vencord
   ];
 
+  # XDG Base Directory Specification - https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+  config.xdg.enable = true;
+  config.xdg.mime.enable = true;
+
   # Nicely reload system units when changing configs
   config.systemd.user.startServices = "sd-switch";
 
