@@ -1,18 +1,18 @@
-{pkgs,...}: {
+{pkgs, ...}: {
   fonts = {
     packages = with pkgs; [
-#      material-icons
-#      material-design-icons
-#      roboto
-#      work-sans
-#      comic-neue
-#      source-sans
-#      twemoji-color-font
-#      comfortaa
-#      inter
-#      lato
+      # material-icons
+      # material-design-icons
+      # roboto
+      # work-sans
+      # comic-neue
+      # source-sans
+      # twemoji-color-font
+      # comfortaa
+      # inter
+      # lato
       lexend
-#      jost
+      # jost
       dejavu_fonts
       iosevka-bin
       noto-fonts

@@ -1,6 +1,6 @@
 {...}: {
   imports = [
     ./hardware-configuration.nix
-#    ../../system/mounts/victorique.nix
+    # ../../system/mounts/victorique.nix
   ];
 }

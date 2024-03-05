@@ -1,4 +1,10 @@
-{config, pkgs, lib, nixpkgs, ...}: {
+{
+  config,
+  pkgs,
+  lib,
+  nixpkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -10,11 +16,11 @@
       source ${./p10k.zsh}
     '';
 
-#    oh-my-zsh = {
-#      enable = true;
-#      plugins = ["git"];
-##      theme = "agnoster";
-#    };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   plugins = ["git"];
+    ##   theme = "agnoster";
+    # };
 
     plugins = [
       {
@@ -24,7 +30,7 @@
           owner = "romkatv";
           repo = "powerlevel10k";
           rev = "v1.20.0";
-	  sha256 = "ES5vJXHjAKw/VHjWs8Au/3R+/aotSbY7PWnWAMzCR8E=";
+          sha256 = "ES5vJXHjAKw/VHjWs8Au/3R+/aotSbY7PWnWAMzCR8E=";
         };
       }
     ];
@@ -56,11 +62,10 @@
       # misc
       kys = "shutdown now";
       diff = "diff --color=auto";
-#      difft = "${lib.getExe pkgs.difftastic} --display=inline";
+      # difft = "${lib.getExe pkgs.difftastic} --display=inline";
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
     };
   };
 }
-

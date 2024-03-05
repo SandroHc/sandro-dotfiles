@@ -1,26 +1,26 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    ripgrep     # `grep` alternative
+    ripgrep # `grep` alternative
     yt-dlp
     imagemagick
     ffmpeg-full
     nmap
     wget
-    fd          # `find` alternative
+    fd # `find` alternative
     rsync
     unzip
 
-#    difftastic # `diff` alternative
-    fzf        # fuzzy file search
-#    hexyl      # hex viewer
-    jql        # JSON query
-#    oha        # HTTP load generator
+    # difftastic # `diff` alternative
+    fzf # fuzzy file search
+    # hexyl      # hex viewer
+    jql # JSON query
+    # oha        # HTTP load generator
   ];
 
   services = {
     gpg-agent = {
       enable = true;
-#      pinentryFlavor = "gnome3";
+      #      pinentryFlavor = "gnome3";
       enableSshSupport = true;
       enableZshIntegration = true;
     };
@@ -29,7 +29,7 @@
   programs = {
     gpg.enable = true;
     man.enable = true;
-    eza.enable = true; # `ls` alternative 
+    eza.enable = true; # `ls` alternative
     dircolors = {
       enable = true;
       enableZshIntegration = true;
@@ -42,14 +42,14 @@
     tealdeer = {
       enable = true;
       settings = {
-#        display = {
-#          compact = false;
-#	  use_pager = true;
-#	};
-	updates.auto_update = true;
+        # display = {
+        #   compact = false;
+        #   use_pager = true;
+        # };
+        updates.auto_update = true;
       };
     };
-    bat = { # `cat` alternative
+    bat = {
       enable = true;
       config = {
         pager = "less -FR";

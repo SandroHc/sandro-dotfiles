@@ -1,4 +1,11 @@
-{ config, pkgs, cfg, lib, inputs, ... }: {
+{
+  config,
+  pkgs,
+  cfg,
+  lib,
+  inputs,
+  ...
+}: {
   environment = {
     systemPackages = with pkgs; [
       git

@@ -1,7 +1,8 @@
-{pkgs, lib, ...}: {
-  environment.variables = {
-    EDITOR = "nvim";
-  };
+{
+  pkgs,
+  lib,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     git
   ];
@@ -30,7 +31,7 @@
       LC_TIME = pt;
     };
   };
-  
+
   console.keyMap = "pt-latin1";
 
   security.rtkit.enable = true;

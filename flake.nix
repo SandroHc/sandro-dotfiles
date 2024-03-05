@@ -10,10 +10,9 @@
     };
   };
 
-  outputs = {...}@inputs: {
+  outputs = {...} @ inputs: {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = import ./hosts inputs;
   };
 }
-

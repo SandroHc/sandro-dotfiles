@@ -1,4 +1,4 @@
-{...}:{
+{...}: {
   imports = [
     ./system.nix
     ./network.nix
@@ -7,4 +7,3 @@
     ./openssh.nix
   ];
 }
-

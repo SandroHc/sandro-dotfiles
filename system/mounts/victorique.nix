@@ -1,5 +1,9 @@
-{config, pkgs, ...}: {
-  environment.systemPackages = [ pkgs.cifs-utils ]; # Needed for domain resolution
+{
+  config,
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = [pkgs.cifs-utils]; # Needed for domain resolution
   fileSystems."/mnt/victorique" = {
     device = "//victorique/archives";
     fsType = "cifs";
@@ -10,9 +14,9 @@
       "x-systemd.mount-timeout=5s"
       "noauto"
       "uid=${toString config.users.users.sandro.uid}"
-#      "credentials=/etc/nixos/system/mounts/victorique-creds"
-#      "username=foo"
-#      "password=bar"
+      # "credentials=/etc/nixos/system/mounts/victorique-creds"
+      # "username=foo"
+      # "password=bar"
     ];
   };
 }
