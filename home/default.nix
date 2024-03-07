@@ -4,7 +4,7 @@
     ./cli
     ./scripts
     ./devel.nix
-    ./vencord
+    ./discord.nix
     ./mpv.nix
   ];
 
