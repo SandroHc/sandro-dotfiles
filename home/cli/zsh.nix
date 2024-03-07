@@ -59,6 +59,7 @@
       n = lib.getExe pkgs.nix;
       nrs = "sudo nixos-rebuild switch --flake /etc/nixos#$(hostname)";
       nrb = "sudo nixos-rebuild boot --flake /etc/nixos#$(hostname)";
+      ng = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
 
       # misc
       kys = "shutdown now";

@@ -37,7 +37,7 @@
       "org/gnome/nautilus/preferences".show-image-thumbnails = "always";
 
       # Enable fractional scaling
-      # "org/gnome/mutter".experimental-features = "['scale-monitor-framebuffer']";
+      "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
     };
   };
 }
