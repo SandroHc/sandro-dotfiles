@@ -4,14 +4,14 @@
     corepack_21
 
     python313
-    python311Packages.pip
+    # python311Packages.pip
 
     jdk21
 
     clang
     rustup
 
-    jetbrains.idea-ultimate
-    jetbrains.rust-rover
+    unstable.jetbrains.idea-ultimate
+    unstable.jetbrains.rust-rover
   ];
 }

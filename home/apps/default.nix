@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  imports = [
+    ./devel.nix
+    ./discord.nix
+    ./mpv.nix
+  ];
+
   # figure out how to setup NUR - https://github.com/NL-TCH/nur-packages?tab=readme-ov-file
   #  pkgs.packageOverrides = pkgs: {
   #    nur = import (builtins.fetchTarball {
