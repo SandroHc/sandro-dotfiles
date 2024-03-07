@@ -25,6 +25,8 @@
       geary # email reader
       # evince # document viewer
       gnome-characters
+      gnome-font-viewer
+      gnome-maps
       totem # video player
       # tali # poker game
       # iagno # go game

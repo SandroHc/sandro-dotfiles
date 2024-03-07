@@ -1,20 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    ripgrep # `grep` alternative
-    yt-dlp
-    imagemagick
-    ffmpeg-full
-    nmap
-    wget
     fd # `find` alternative
+    ffmpeg-full
+    fzf # fuzzy file search
+    hexyl # hex viewer
+    imagemagick
+    jql # JSON query
+    nmap
+    oha # HTTP load generator
+    p7zip
+    ripgrep # `grep` alternative
     rsync
     unzip
+    wget
+    yt-dlp
 
     # difftastic # `diff` alternative
-    fzf # fuzzy file search
-    # hexyl      # hex viewer
-    jql # JSON query
-    # oha        # HTTP load generator
   ];
 
   services = {

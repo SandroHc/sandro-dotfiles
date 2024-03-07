@@ -16,13 +16,15 @@
   #  };
 
   home.packages = with pkgs; [
+    # davinci-resolve
     firefox
-    steam
-    transmission-gtk
+    inkscape
+    qbittorrent
     libreoffice-fresh
     hunspell
     hunspellDicts.en_US
     hunspellDicts.pt_PT
+    steam
     # gimp
     # wireshark
     # keepassxc

@@ -9,17 +9,13 @@
 
     # Based on: https://github.com/hl2guide/better-mpv-config/blob/master/mpv_v3/mpv.conf
     config = {
-      save-position-on-quit = true; # saves the seekbar position on exit
-      force-seekable = true; # forces videos to be seekable
+      # Audio
+      alang = "jp,jap,en,eng,pt,por"; # default audio languages
 
       # Subtitles
-      alang = "jp,jap,en,eng"; # default audio languages
-      embeddedfonts = true; # use embedded fonts for SSA/ASS subs
       slang = "en,eng,pt,por"; # default subtitles languages
-      # sid = "auto"; # automatically play subtitles that match the language and audio track
       sub-auto = "fuzzy";
       sub-file-paths = "subs/\${filename/no-ext}:subs/\${filename}:subs";
-      # sub-fix-timing = false; # do not try to fix gaps (which might make it worse in some cases)
       # sub-font-size = 45;
       # sub-font = "Arial";
     };
@@ -69,6 +65,7 @@
   dconf.settings."io/github/celluloid-player/celluloid" = {
     draggable-video-area-enable = true;
     last-folder-enable = true;
+    present-window-on-file-open = true;
 
     # Make Celluloid read the config and bindings
     mpv-config-enable = true;

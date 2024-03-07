@@ -30,6 +30,10 @@
       ];
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/shell".favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop"];
+      "org/gnome/mutter" = {
+        dynamic-workspaces = true;
+        edge-tiling = true;
+      };
       "org/gnome/nautilus/preferences".show-image-thumbnails = "always";
 
       # Enable fractional scaling
