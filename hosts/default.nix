@@ -1,6 +1,7 @@
 {
-  nixpkgs,
   self,
+  nixpkgs,
+  nur,
   ...
 }: let
   inputs = self.inputs;
@@ -34,6 +35,7 @@ in {
         gnome
         homeManagerModule
         {inherit home-manager;}
+        {nixpkgs.overlays = [nur.overlay];}
       ]
       ++ shared;
     specialArgs = {inherit inputs;};
@@ -50,6 +52,7 @@ in {
         gnome
         homeManagerModule
         {inherit home-manager;}
+        {nixpkgs.overlays = [nur.overlay];}
       ]
       ++ shared;
     specialArgs = {inherit inputs;};
