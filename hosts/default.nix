@@ -10,9 +10,13 @@
   bootloader = ../system/core/bootloader.nix;
   wayland = ../system/wayland;
   gnome = ../system/de/gnome.nix;
+  hw = inputs.nixos-hardware.nixosModules;
   homeManagerModule = inputs.home-manager.nixosModules.home-manager;
 
-  shared = [core];
+  shared = [
+    core
+    {nixpkgs.overlays = [nur.overlay];}
+  ];
 
   home-manager = {
     useGlobalPkgs = true;
@@ -35,7 +39,6 @@ in {
         gnome
         homeManagerModule
         {inherit home-manager;}
-        {nixpkgs.overlays = [nur.overlay];}
       ]
       ++ shared;
     specialArgs = {inherit inputs;};
@@ -51,8 +54,8 @@ in {
         wayland
         gnome
         homeManagerModule
+        hw.lenovo-thinkpad-t470s
         {inherit home-manager;}
-        {nixpkgs.overlays = [nur.overlay];}
       ]
       ++ shared;
     specialArgs = {inherit inputs;};
