@@ -1,5 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    difftastic # `diff` alternative
+    exif
     fd # `find` alternative
     ffmpeg-full
     fzf # fuzzy file search
@@ -14,14 +16,12 @@
     unzip
     wget
     yt-dlp
-
-    # difftastic # `diff` alternative
   ];
 
   services = {
     gpg-agent = {
       enable = true;
-      #      pinentryFlavor = "gnome3";
+      # pinentryFlavor = "gnome3";
       enableSshSupport = true;
       enableZshIntegration = true;
     };

@@ -29,15 +29,24 @@
         (lib.gvariant.mkTuple ["xkb" "pt"])
       ];
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      "org/gnome/shell".favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop"];
+      "org/gnome/shell" = {
+        enabled-extensions = [
+          "appindicatorsupport@rgcjonas.gmail.com"
+        ];
+        favorite-apps = [
+          "firefox.desktop"
+          "org.gnome.Nautilus.desktop"
+        ];
+      };
+      "org/gnome/shell/extensions/appindicator" = {
+        icon-saturation = 1.0;
+      };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
         edge-tiling = true;
+        experimental-features = ["scale-monitor-framebuffer"]; # Enable fractional scaling
       };
       "org/gnome/nautilus/preferences".show-image-thumbnails = "always";
-
-      # Enable fractional scaling
-      "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
     };
   };
 }

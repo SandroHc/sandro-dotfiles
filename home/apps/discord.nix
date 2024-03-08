@@ -17,7 +17,7 @@
     autoUpdate = false;
     autoUpdateNotification = true;
     useQuickCss = true;
-    themeLinks = [];
+    themeLinks = ["https://luckfire.github.io/amoled-cord/src/amoled-cord.css"];
     enabledThemes = ["personal.css"];
     enableReactDevtools = false;
     frameless = false;
@@ -129,7 +129,7 @@
      */
 
     /* chat box */
-    button[aria-label="Send a gift"];
+    button[aria-label="Send a gift"],
     button[aria-label="Open sticker picker"] {
         display: none;
     }
@@ -144,7 +144,7 @@
         display: none;
     }
     /** sidebar spacer after banner */
-    ul[aria-label="Channels"] > div:nth-child(1);
+    ul[aria-label="Channels"] > div:nth-child(1),
     ul[aria-label="Channels"] > div:nth-child(2) {
         display: none;
     }

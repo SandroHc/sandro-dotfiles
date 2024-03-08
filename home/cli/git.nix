@@ -23,6 +23,7 @@
     };
 
     extraConfig = {
+      diff.external = "difft --display=inline";
       gpg.format = "ssh";
       merge.ff = "only";
       pull.rebase = true;

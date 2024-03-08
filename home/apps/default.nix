@@ -12,6 +12,7 @@
     inkscape
     # keepassxc
     qbittorrent
+    # obs-studio
     # obsidian
     # wireshark
 
@@ -23,6 +24,7 @@
     bottles
 
     # social
+    # element-desktop
     # telegram-desktop
     # signal-desktop
     # whatsapp-for-linux
@@ -30,6 +32,7 @@
     # gaming
     steam
     lutris
+    # prismlauncher # Minecraft launcher
 
     # productivity
     libreoffice-fresh

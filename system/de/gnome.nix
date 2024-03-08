@@ -10,6 +10,15 @@
     ];
   };
 
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
+
+  environment.systemPackages = with pkgs; [
+    gnome.gnome-tweaks
+    gnomeExtensions.appindicator
+  ];
+
   # Disable Gnome applications
   environment.gnome.excludePackages =
     (with pkgs; [

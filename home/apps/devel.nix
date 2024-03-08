@@ -6,7 +6,7 @@
     python313
     # python311Packages.pip
 
-    jdk21
+    gradle
 
     clang
     rustup
@@ -14,4 +14,9 @@
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rust-rover
   ];
+
+  programs.java = {
+    enable = true; # sets JAVA_HOME
+    package = pkgs.jdk17;
+  };
 }
