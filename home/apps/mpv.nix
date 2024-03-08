@@ -18,6 +18,7 @@
       sub-file-paths = "subs/\${filename/no-ext}:subs/\${filename}:subs";
       # sub-font-size = 45;
       # sub-font = "Arial";
+      demuxer-mkv-subtitle-preroll = "yes"; # force showing subtitles while seeking
     };
 
     # Keybindings testing mode: mpv --input-test --force-window --idle (Use your CMD, Test Keybinds)

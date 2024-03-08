@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   fonts = {
+    enableDefaultPackages = false;
     packages = with pkgs; [
       # material-icons
       # material-design-icons
@@ -21,8 +22,6 @@
       jetbrains-mono
       (nerdfonts.override {fonts = ["Iosevka" "JetBrainsMono"];})
     ];
-
-    enableDefaultPackages = false;
 
     # this fixes emoji stuff
     fontconfig = {

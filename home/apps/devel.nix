@@ -1,22 +1,25 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nodejs_21
-    corepack_21
-
+    # languages and tooling
     python313
     # python311Packages.pip
-
-    gradle
 
     clang
     rustup
 
+    gradle
+
+    nodejs_21
+    corepack_21
+
+    # editors
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rust-rover
+    # zed-editor # WIP - nixpkgs: https://github.com/NixOS/nixpkgs/pull/284010, zed: https://github.com/zed-industries/zed/issues/7015
   ];
 
   programs.java = {
-    enable = true; # sets JAVA_HOME
+    enable = true; # sets $JAVA_HOME
     package = pkgs.jdk17;
   };
 }

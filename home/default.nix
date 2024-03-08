@@ -3,12 +3,12 @@
     ./apps
     ./cli
     ./scripts
-    ./gnome.nix
   ];
 
   # XDG Base Directory Specification - https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
   config.xdg.enable = true;
   config.xdg.mime.enable = true;
+  config.xdg.configFile."background".source = ./background.jpg;
 
   # Nicely reload system units when changing configs
   config.systemd.user.startServices = "sd-switch";

@@ -2,10 +2,12 @@
   imports = [
     ./devel.nix
     ./discord.nix
+    ./gnome.nix
     ./mpv.nix
   ];
 
   home.packages = with pkgs; [
+    # amberol (audio player)
     # davinci-resolve
     firefox
     # gimp

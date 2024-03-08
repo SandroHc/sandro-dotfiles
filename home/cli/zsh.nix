@@ -47,7 +47,7 @@
     shellAliases = {
       e = "\${EDITOR:-nvim}";
       cat = lib.getExe pkgs.bat;
-      catp = "cat --plain";
+      catp = "cat --style=plain --paging=never";
       grep = lib.getExe pkgs.ripgrep;
       ls = "${lib.getExe pkgs.eza} --icons --group-directories-first";
       l = "ls --long --header --all --time-style=long-iso";

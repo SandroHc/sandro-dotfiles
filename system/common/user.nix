@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.zsh.enable = true;
 
   users = {
@@ -12,14 +8,13 @@
         description = "SandroHc";
         isNormalUser = true;
         uid = 1000;
-        # initialPassword = "changeme";
-        hashedPasswordFile = "/home/sandro/.local/share/passwd";
+        hashedPasswordFile = "/home/sandro/.local/share/passwd"; # TODO: use XGD state dir
         shell = pkgs.zsh;
+        extraGroups = ["wheel" "networkmanager" "systemd-journal" "docker"];
         openssh.authorizedKeys.keyFiles = [
           ../../hosts/kurisu/ssh.pub
           ../../hosts/hanekawa/ssh.pub
         ];
-        extraGroups = ["wheel" "networkmanager" "systemd-journal" "docker"];
       };
     };
   };
