@@ -41,5 +41,8 @@
     hunspell
     hunspellDicts.en_US
     hunspellDicts.pt_PT
+
+    # AI/LLM
+    ollama
   ];
 }
