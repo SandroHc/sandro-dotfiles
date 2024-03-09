@@ -10,6 +10,7 @@
     # amberol (audio player)
     # davinci-resolve
     firefox
+    flameshot
     # gimp
     inkscape
     # keepassxc
