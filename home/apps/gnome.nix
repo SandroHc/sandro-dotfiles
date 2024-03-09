@@ -19,6 +19,28 @@
         (mkTuple ["xkb" "pt"])
       ];
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/gnome/settings-daemon/plugins/media-keys" = {
+        custom-keybindings = [
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-file-explorer/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-local/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-upload/"
+        ];
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-file-explorer" = {
+        binding = "<Super>e";
+        command = "nautilus";
+        name = "Open File Explorer";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-local" = {
+        binding = "Print";
+        command = "flameshot-workaround";
+        name = "Take Screenshot";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-upload" = {
+        binding = "<Control>Print";
+        command = "mitto-capture";
+        name = "Take Screenshot & Upload";
+      };
       "org/gnome/shell" = {
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"

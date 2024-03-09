@@ -13,10 +13,12 @@
     exif
     fd # `find` alternative
     ffmpeg-full
+    file
     fzf # fuzzy file search
     hexyl # hex viewer
     imagemagick
     jql # JSON query
+    libnotify # for `notify-send`
     nmap
     oha # HTTP load generator
     p7zip
@@ -24,6 +26,7 @@
     rsync
     unzip
     wget
+    wl-clipboard
     yt-dlp
   ];
 
