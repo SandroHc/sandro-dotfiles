@@ -8,7 +8,7 @@
         description = "SandroHc";
         isNormalUser = true;
         uid = 1000;
-        hashedPasswordFile = "/home/sandro/.local/share/passwd"; # TODO: use XGD state dir
+        hashedPasswordFile = "/home/sandro/.local/share/secrets/passwd"; # TODO: use XGD state dir
         shell = pkgs.zsh;
         extraGroups = ["wheel" "networkmanager" "systemd-journal" "docker"];
         openssh.authorizedKeys.keyFiles = [

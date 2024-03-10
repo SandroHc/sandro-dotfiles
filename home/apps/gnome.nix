@@ -21,22 +21,28 @@
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-file-explorer/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-local/"
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-upload/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/"
         ];
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/open-file-explorer" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Super>e";
         command = "nautilus";
         name = "Open File Explorer";
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-local" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Super>t";
+        command = "kgx";
+        name = "Open Terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
         binding = "Print";
         command = "flameshot-workaround";
         name = "Take Screenshot";
       };
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/screenshot-upload" = {
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
         binding = "<Control>Print";
         command = "mitto-capture";
         name = "Take Screenshot & Upload";

@@ -13,14 +13,14 @@
     dotDir = ".config/zsh"; # Can't use "${config.xdg.configHome}/zsh" because this setting expects a relative path from $HOME.
 
     initExtra = ''
-      source ${./p10k.zsh}
-    '';
+      # Powerlevel10k config
+      . ${./p10k.zsh}
 
-    # oh-my-zsh = {
-    #   enable = true;
-    #   plugins = ["git"];
-    ##   theme = "agnoster";
-    # };
+      # Mitto config
+      if [ -f "''${XDG_DATA_HOME:-$HOME/.local/share}/secrets/mitto" ]; then
+        . "''${XDG_DATA_HOME:-$HOME/.local/share}/secrets/mitto"
+      fi
+    '';
 
     plugins = [
       {

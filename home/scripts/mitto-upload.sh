@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 #
 # Utility script for uploading a file to a Mitto instance.
 # Dependencies: curl
@@ -6,7 +6,7 @@
 # Usage:
 # MITTO_URL=https://my-host.com/upload MITTO_USER=myuser MITTO_PASS=mypass ./mitto-upload.sh FILE
 
-function echoerr() {
+echoerr() {
   echo "$@" 1>&2;
 }
 

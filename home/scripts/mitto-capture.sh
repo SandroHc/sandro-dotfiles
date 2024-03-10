@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 #
 # Utility script for capturing a screenshot with Flameshot and uploading it to a Mitto instance.
 # Dependencies: flameshot, curl, file, notify-send, wl-clipboard
@@ -10,7 +10,7 @@
 # Usage:
 # MITTO_URL=https://my-host.com/upload MITTO_USER=myuser MITTO_PASS=mypass ./mitto-capture.sh
 
-function _notify() {
+_notify() {
     notify-send --expire-time 2000 --app-name "Flameshot" --icon "$1" "Screenshot" "$2"
 }
 
@@ -19,7 +19,7 @@ tmp_file=$(mktemp --dry-run -t "screen_$(date +'%Y%m%d')_XXXXXX.png")
 echo "Taking screenshot and saving it to '$tmp_file'"
 flameshot gui -r > "$tmp_file"
 
-if [[ $(file --mime-type -b "$tmp_file") != "image/png" ]]; then
+if [ "$(file --mime-type -b "$tmp_file")" != "image/png" ]; then
 	rm "$tmp_file"
 	_notify "flameshot" "Screenshot aborted"
 	exit 1
