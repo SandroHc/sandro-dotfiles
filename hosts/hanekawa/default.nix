@@ -6,6 +6,7 @@
     ../../system/graphical
     ../../system/gnome
     ../../system/ssh.nix
+    ../../system/auto-updates.nix
     # ../../system/mounts/victorique.nix
   ];
 

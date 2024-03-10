@@ -9,6 +9,7 @@
     ../../system/graphical
     ../../system/gnome
     ../../system/ssh.nix
+    ../../system/auto-updates.nix
   ];
 
   networking.hostName = "kurisu";
