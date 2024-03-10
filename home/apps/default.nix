@@ -2,6 +2,7 @@
   imports = [
     ./devel.nix
     ./discord.nix
+    ./firefox.nix
     ./gnome.nix
     ./mpv.nix
   ];
@@ -9,7 +10,6 @@
   home.packages = with pkgs; [
     # amberol (audio player)
     # davinci-resolve
-    firefox
     flameshot
     # gimp
     inkscape
