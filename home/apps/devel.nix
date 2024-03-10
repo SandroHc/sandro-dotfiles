@@ -22,4 +22,11 @@
     enable = true; # sets $JAVA_HOME
     package = pkgs.jdk17;
   };
+
+  # virtualisation = {
+  #   docker = {
+  #     enable = true;
+  #     # storageDriver = "btrfs";
+  #   };
+  # };
 }

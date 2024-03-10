@@ -8,34 +8,43 @@
   ];
 
   home.packages = with pkgs; [
-    # amberol (audio player)
-    # davinci-resolve
+    #audacity
+    ##amberol (audio player)
+    #calibre # e-book manager
+    #kepubify # convert EPUB to KEPUB
+    #davinci-resolve
     flameshot
-    # gimp
-    inkscape
-    # keepassxc
+    #gimp
+    #inkscape
+    #keepassxc
     qbittorrent
-    # obs-studio
-    # obsidian
-    # wireshark
+    #tor
+    #obs-studio
+    #obsidian
+    #wireshark
 
-    # NUR
+    # NUR packages
     # https://github.com/NL-TCH/nur-packages/tree/master/pkgs/spotify-adblock
     nur.repos.nltch.spotify-adblock
 
+    # Windows compat
     wineWowPackages.stable
     bottles
 
+    # cloud
+    #rclone
+    ##megasync
+
     # social
-    # element-desktop
-    # telegram-desktop
-    # signal-desktop
-    # whatsapp-for-linux
+    #element-desktop
+    #telegram-desktop
+    #signal-desktop
+    #whatsapp-for-linux
 
     # gaming
-    steam
-    lutris
-    # prismlauncher # Minecraft launcher
+    #steam
+    #lutris
+    #prismlauncher # Minecraft launcher
 
     # productivity
     libreoffice-fresh
