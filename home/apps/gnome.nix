@@ -59,6 +59,9 @@
       "org/gnome/shell/extensions/appindicator" = {
         icon-saturation = 1.0;
       };
+      "org/gnome/shell/overrides" = {
+        button-layout = "minimize,maximize,close:";
+      };
       "org/gnome/mutter" = {
         dynamic-workspaces = true;
         edge-tiling = true;

@@ -10,7 +10,7 @@
       "nixpkgs"
       "-L" # print build logs
     ];
-    dates = "Fri 23:00"; # https://www.mankier.com/7/systemd.time
+    dates = "friday 23:00";
     randomizedDelaySec = "30min";
   };
 }

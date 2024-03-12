@@ -8,14 +8,10 @@
   ];
 
   home.packages = with pkgs; [
-    #audacity
     ##amberol (audio player)
     #calibre # e-book manager
     #kepubify # convert EPUB to KEPUB
-    #davinci-resolve
     flameshot
-    #gimp
-    #inkscape
     #keepassxc
     qbittorrent
     #tor
@@ -30,6 +26,13 @@
     # Windows compat
     wineWowPackages.stable
     bottles
+
+    # arts
+    #aseprite
+    #audacity
+    #davinci-resolve
+    #gimp
+    #inkscape
 
     # cloud
     #rclone

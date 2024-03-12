@@ -16,8 +16,6 @@
     # };
   };
 
-  services.samba-wsdd = {
-    enable = true;
-    openFirewall = true;
-  };
+  # Make this host discoverable to Windows machines
+  services.samba.enable = true;
 }

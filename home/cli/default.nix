@@ -21,11 +21,12 @@
     libnotify # for `notify-send`
     nmap
     oha # HTTP load generator
+    ouch # file de/compress
     p7zip
+    rclone # cloud sync
+    restic # backup utility
     ripgrep # `grep` alternative
     rsync
-    unzip
-    wget
     wl-clipboard
     yt-dlp
   ];
@@ -45,13 +46,7 @@
     };
     tealdeer = {
       enable = true;
-      settings = {
-        # display = {
-        #   compact = false;
-        #   use_pager = true;
-        # };
-        updates.auto_update = true;
-      };
+      settings.updates.auto_update = true;
     };
     bat = {
       enable = true;
@@ -64,8 +59,6 @@
 
   services.gpg-agent = {
     enable = true;
-    # pinentryFlavor = "gnome3";
-    enableSshSupport = true;
-    enableZshIntegration = true;
+    pinentryFlavor = "gnome3";
   };
 }
