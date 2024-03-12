@@ -19,6 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.clipboard-history
     gnomeExtensions.color-picker
   ];
 

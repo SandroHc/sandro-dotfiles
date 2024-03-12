@@ -50,6 +50,7 @@
       "org/gnome/shell" = {
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
+          "clipboard-history@alexsaveau.dev"
           "color-picker@tuberry"
         ];
         favorite-apps = [
@@ -59,6 +60,11 @@
       };
       "org/gnome/shell/extensions/appindicator" = {
         icon-saturation = 1.0;
+      };
+      "org/gnome/shell/extensions/clipboard-history" = {
+        display-mode = 3; # no icon in status bar
+        toggle-menu = ["<Super>v"];
+        toggle-private-mode = [];
       };
       "org/gnome/shell/extensions/color-picker" = {
         color-picker-shortcut = ["<Super>c"];
