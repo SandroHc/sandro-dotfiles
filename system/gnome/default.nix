@@ -19,6 +19,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.color-picker
   ];
 
   services.udev.packages = with pkgs; [

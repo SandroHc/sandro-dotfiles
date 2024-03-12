@@ -50,6 +50,7 @@
       "org/gnome/shell" = {
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
+          "color-picker@tuberry"
         ];
         favorite-apps = [
           "firefox.desktop"
@@ -58,6 +59,12 @@
       };
       "org/gnome/shell/extensions/appindicator" = {
         icon-saturation = 1.0;
+      };
+      "org/gnome/shell/extensions/color-picker" = {
+        color-picker-shortcut = ["<Super>c"];
+        enable-shortcut = true;
+        enable-systray = false;
+        menu-key = "c";
       };
       "org/gnome/shell/overrides" = {
         button-layout = "minimize,maximize,close:";
