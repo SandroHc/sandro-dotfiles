@@ -13,4 +13,9 @@
   networking.hostName = "hanekawa";
   security.rtkit.enable = true;
   services.printing.enable = true; # Enable CUPS to print documents
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 }

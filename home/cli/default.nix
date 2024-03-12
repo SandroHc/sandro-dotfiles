@@ -22,7 +22,6 @@
     nmap
     oha # HTTP load generator
     ouch # file de/compress
-    p7zip
     rclone # cloud sync
     restic # backup utility
     ripgrep # `grep` alternative

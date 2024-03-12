@@ -24,8 +24,9 @@
     nur.repos.nltch.spotify-adblock
 
     # Windows compat
-    wineWowPackages.stable
-    bottles
+    unstable.wineWowPackages.waylandFull
+    unstable.winetricks
+    unstable.bottles
 
     # arts
     #aseprite
@@ -33,6 +34,7 @@
     #davinci-resolve
     #gimp
     #inkscape
+    krita
 
     # cloud
     #rclone
@@ -45,15 +47,18 @@
     #whatsapp-for-linux
 
     # gaming
-    #steam
-    #lutris
-    #prismlauncher # Minecraft launcher
+    steam
+    lutris
+    prismlauncher # Minecraft launcher
 
     # productivity
     libreoffice-fresh
     hunspell
     hunspellDicts.en_US
     hunspellDicts.pt_PT
+
+    # fun
+    #typer
 
     # AI/LLM
     ollama
