@@ -5,6 +5,9 @@
       enable = true;
     };
 
+    # Replace iptables with nftables
+    #nftables.enable = true;
+
     firewall = {
       enable = true;
       allowPing = true;
@@ -18,4 +21,8 @@
 
   # Make this host discoverable to Windows machines
   services.samba.enable = true;
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
 }

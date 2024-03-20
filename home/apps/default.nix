@@ -17,7 +17,7 @@
     #tor
     #obs-studio
     #obsidian
-    #wireshark
+    wireshark
 
     # NUR packages
     # https://github.com/NL-TCH/nur-packages/tree/master/pkgs/spotify-adblock

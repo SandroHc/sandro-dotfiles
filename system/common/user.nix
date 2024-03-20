@@ -10,7 +10,7 @@
         uid = 1000;
         hashedPasswordFile = "/home/sandro/.local/share/secrets/passwd"; # TODO: use XGD state dir
         shell = pkgs.zsh;
-        extraGroups = ["wheel" "networkmanager" "systemd-journal" "docker"];
+        extraGroups = ["wheel" "networkmanager" "systemd-journal" "docker" "wireshark"];
         openssh.authorizedKeys.keyFiles = [
           ../../hosts/kurisu/ssh.pub
           ../../hosts/hanekawa/ssh.pub
