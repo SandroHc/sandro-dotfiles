@@ -19,6 +19,10 @@
         (mkTuple ["xkb" "pt"])
       ];
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/gnome/desktop/peripherals/touchpad" = {
+        tap-to-click = true;
+        two-finger-scrolling-enabled = true;
+      };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"

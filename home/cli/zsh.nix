@@ -7,19 +7,36 @@
 }: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
-    dotDir = ".config/zsh"; # Can't use "${config.xdg.configHome}/zsh" because this setting expects a relative path from $HOME.
+    dotDir = ".config/zsh"; # path of Zsh configs, relative to $HOME
 
     initExtra = ''
-      # Powerlevel10k config
+      # POWERLEVEL10K CONFIG
       . ${./p10k.zsh}
 
-      # Mitto config
+      # MITTO CONFIG config
       if [ -f "''${XDG_DATA_HOME:-$HOME/.local/share}/secrets/mitto" ]; then
         . "''${XDG_DATA_HOME:-$HOME/.local/share}/secrets/mitto"
       fi
+
+      # KEYBINDINGS
+      bindkey '^[[1;5D' backward-word  # jump to previous word with CTRL-LEFT
+      bindkey '^[[1;5C' forward-word   # jump to next word with CTRL-LEFT
+      bindkey '^H' backward-kill-word  # delete previous word with CTRL-BACKSPACE
+    '';
+
+    completionInit = ''
+      zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' # Case insensitive tab completion
+      zstyle ':completion:*' list-colors "''${(s.:.)LS_COLORS}"       # Colored completion (different colors for dirs/files/etc)
+      zstyle ':completion:*' rehash true                              # automatically find new executables in path
+      zstyle ':completion:*' menu select                              # Highlight menu selection
+      # Speed up completions
+      zstyle ':completion:*' accept-exact '*(N)'
+      zstyle ':completion:*' use-cache on
+      zstyle ':completion:*' cache-path "''${XDG_DATA_HOME:-$HOME/.local/share}/zsh/completions"
+
+      autoload -U compinit && compinit
     '';
 
     plugins = [
