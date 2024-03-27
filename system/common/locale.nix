@@ -1,4 +1,4 @@
-{...}: let
+{pkgs, ...}: let
   en = "en_US.UTF-8";
   pt = "pt_PT.UTF-8";
 in {
@@ -21,6 +21,17 @@ in {
       LC_PAPER = pt;
       LC_TELEPHONE = pt;
       LC_TIME = pt;
+    };
+
+    # Enables ibus IME with Japanese support
+    # Useful commands:
+    #  - ibus-daemon -d
+    #  - ibus-setup
+    inputMethod = {
+      enabled = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [
+        mozc
+      ];
     };
   };
 

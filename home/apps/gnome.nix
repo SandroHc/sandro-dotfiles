@@ -17,6 +17,7 @@
       "org/gnome/desktop/input-sources".sources = [
         (mkTuple ["xkb" "us+intl"])
         (mkTuple ["xkb" "pt"])
+        (mkTuple ["ibus" "mozc-jp"])
       ];
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/desktop/peripherals/touchpad" = {
