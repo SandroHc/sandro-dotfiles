@@ -22,4 +22,9 @@
     enable = true;
     openFirewall = true;
   };
+
+  # services.avahi = {
+  #   enable = true;
+  #   # nssmdns = true;
+  # };
 }
