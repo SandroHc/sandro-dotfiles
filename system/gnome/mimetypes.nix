@@ -55,7 +55,7 @@ in {
     ];
 
     removedAssociations = lib.attrsets.mergeAttrsList [
-      # Celluloid has way too many associations with audio files for a video player.
+      # Prevent audio formats from opening in Celluloid
       # (associate {
       #   desktops = "io.github.celluloid_player.Celluloid.desktop";
       #   mimeTypes = [
@@ -82,30 +82,30 @@ in {
       #   ];
       # })
 
-      # # Prefer to open images with Loupe instead of an image editor.
-      # (associate {
-      #   desktops = "gimp.desktop";
-      #   mimeTypes = [
-      #     "image/avif"
-      #     "image/bmp"
-      #     "image/gif"
-      #     "image/heic"
-      #     "image/heif"
-      #     "image/jpeg"
-      #     "image/jxl"
-      #     "image/png"
-      #     "image/svg+xml"
-      #     "image/tiff"
-      #     "image/webp"
-      #     "image/x-exr"
-      #     "image/x-portable-anymap"
-      #     "image/x-portable-bitmap"
-      #     "image/x-portable-graymap"
-      #     "image/x-portable-pixmap"
-      #     "image/x-tga"
-      #     "image/x-webp"
-      #   ];
-      # })
+      # Prevent image formats to open in an image editor
+      (associate {
+        desktops = "krita.desktop";
+        mimeTypes = [
+          "image/avif"
+          "image/bmp"
+          "image/gif"
+          "image/heic"
+          "image/heif"
+          "image/jpeg"
+          "image/jxl"
+          "image/png"
+          "image/svg+xml"
+          "image/tiff"
+          "image/webp"
+          "image/x-exr"
+          "image/x-portable-anymap"
+          "image/x-portable-bitmap"
+          "image/x-portable-graymap"
+          "image/x-portable-pixmap"
+          "image/x-tga"
+          "image/x-webp"
+        ];
+      })
     ];
   };
 }
