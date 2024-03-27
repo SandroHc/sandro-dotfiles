@@ -5,7 +5,8 @@
     ../../system/common
     ../../system/graphical
     ../../system/gnome
-    ../../system/ssh.nix
+    ../../system/services/ssh.nix
+    ../../system/services/rdp.nix
     ../../system/auto-updates.nix
     # ../../system/mounts/victorique.nix
   ];

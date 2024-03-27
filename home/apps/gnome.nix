@@ -24,6 +24,9 @@
         tap-to-click = true;
         two-finger-scrolling-enabled = true;
       };
+      "org/gnome/desktop/remote-desktop/rdp" = {
+        enable = true;
+      };
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"

@@ -5,9 +5,6 @@
       enable = true;
     };
 
-    # Replace iptables with nftables
-    #nftables.enable = true;
-
     firewall = {
       enable = true;
       allowPing = true;
