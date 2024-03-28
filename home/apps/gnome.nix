@@ -55,6 +55,10 @@
         command = "mitto-capture";
         name = "Take Screenshot & Upload";
       };
+      "org/gnome/settings-daemon/plugins/power" = {
+        idle-dim = false;
+        sleep-inactive-ac-type = "nothing";
+      };
       "org/gnome/shell" = {
         enabled-extensions = [
           "appindicatorsupport@rgcjonas.gmail.com"
