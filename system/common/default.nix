@@ -47,8 +47,15 @@
           config.allowUnfree = true;
         };
       };
+      unstable-packages-zed = final: _prev: {
+        unstable-zed = import self.inputs.nixpkgs-unstable-zed {
+          system = final.system;
+          config.allowUnfree = true;
+        };
+      };
     in [
       unstable-packages
+      unstable-packages-zed
       self.inputs.nur.overlay
     ];
   };

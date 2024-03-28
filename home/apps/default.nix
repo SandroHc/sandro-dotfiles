@@ -63,4 +63,6 @@
     # AI/LLM
     ollama
   ];
+
+  # services.ollama.enabled = true;
 }

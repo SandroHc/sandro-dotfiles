@@ -6,6 +6,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable-zed.url = "github:GaetanLepage/nixpkgs/zed"; # https://github.com/NixOS/nixpkgs/pull/284010
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     impermanence.url = "github:nix-community/impermanence/master";
     nur.url = "github:nix-community/NUR";

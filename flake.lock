@@ -85,6 +85,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-unstable-zed": {
+      "locked": {
+        "lastModified": 1711577520,
+        "narHash": "sha256-ZJva30jH4ONgYzV5n/nCA2UvvAmJkSCxEg4tNFbi2nU=",
+        "owner": "GaetanLepage",
+        "repo": "nixpkgs",
+        "rev": "43ae67590d020abb0df6fdaadc508adc8e425f72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GaetanLepage",
+        "ref": "zed",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "locked": {
         "lastModified": 1711548918,
@@ -107,6 +123,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-unstable-zed": "nixpkgs-unstable-zed",
         "nur": "nur"
       }
     }

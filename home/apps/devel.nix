@@ -15,7 +15,7 @@
     # editors
     unstable.jetbrains.idea-ultimate
     unstable.jetbrains.rust-rover
-    # zed-editor # WIP - nixpkgs: https://github.com/NixOS/nixpkgs/pull/284010, zed: https://github.com/zed-industries/zed/issues/7015
+    unstable-zed.zed-editor # WIP: https://github.com/NixOS/nixpkgs/pull/284010, https://github.com/zed-industries/zed/issues/7015
   ];
 
   programs.java = {
